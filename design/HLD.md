@@ -25,17 +25,16 @@ When a user sends a message, the module will utilize the recipient's public RSA 
 
 By incorporating robust encryption techniques, this module plays a critical role in maintaining privacy and data security, ensuring that sensitive information is protected against unauthorized access or interception.
 
-##### Generates private key
+##### Key Generator
 
 ```mermaid
 flowchart
 A("START") --> B("Generates private key")
 B --> C{"There was an error?"}
 C -->|yes| D("Returns a 'NotGeneratedKeyError'")
-C -->|No| G("Returns generated key")
-D --> F[End]
-G --> F
-
-
+C -->|No| G("Stores private and public key in RAM memory")
+G --> H("Returns public key")
+H --> I("END")
+D --> I
 
 ```
