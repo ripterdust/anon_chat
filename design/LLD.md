@@ -12,11 +12,11 @@ The intended propouse of this document is to create a Low-level Design (LLD) to 
 
 ### Description
 
-*Anonymouse Chat* is a coudebase designed to facilitate secure, private conversations between users while ensuring anonymity. The system aims to create a safe 
+*Anonymouse Chat* is a codebase designed to facilitate secure, private conversations between users while ensuring anonymity. The system aims to create a safe 
 environment for users to comunicate without revealing their identities, using end-to-end encyrption and privacy-preserving techniques. The application will 
 include features like real-time messaging, user authentication with anonymity preservation, and a lightweight interface. 
 
-### Propused deliverable
+### Deliverable
 
 #### Encrypter
 The Encrypter module is responsible for ensuring the secure transmission of messages within the application by leveraging the RSA encryption method. This module will generate a unique pair of cryptographic keys: a private key, which remains securely stored within the user’s device, and a public key, which can be shared with other users for message encryption.
@@ -78,3 +78,32 @@ H --> Z
 I --> Z
 D --> Z
 ```
+
+### Viewer
+### Server
+
+#### Connection
+```mermaid
+flowchart
+A("START")
+Z("END")
+
+A -->|Shows user Ip| B("Asks if waits or request a connection")
+B --> C{"Waits for connection?"}
+C --> |No| D("Request client IP")
+D --> F("Connect")
+C --> |Yes| G("Waits foreign connection request")
+G --> H{"Accept incomming connection?"}
+H --> |No| Z
+H --> |Yes| I("Opens chat box")
+F --> J{"Connected successfully"}
+J -->|Yes| K("Opens chat box")
+J --> |No| Z
+K --> Z 
+I --> Z
+
+```
+
+#### Message sending
+
+#### Message receiving
