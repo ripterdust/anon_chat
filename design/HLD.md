@@ -59,3 +59,22 @@ I --> J("END")
 G --> J
 D --> J
 ```
+
+#### Message encryption
+The Message Encryption method is a critical function within the Encrypter module, responsible for securely encrypting messages before they are transmitted between users.
+This process ensures that the content of the messages remains confidential and can only be read by the intended recipient.
+
+```mermaid
+flowchart
+Z("END")
+A("START") --> B("Receives a non ecrypted message")
+B --> C{"Is an empty string"}
+C -->|Yes| D("Returns an 'EmptyMessageError'")
+C -->|No| F("Encrypts message")
+F --> G{"Encrypted successfully"}
+G --> |No| H("Returns a 'MessageEncryptionError'")
+G -->|Yes| I("Returns encrypted message")
+H --> Z
+I --> Z
+D --> Z
+```
