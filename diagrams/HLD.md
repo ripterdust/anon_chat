@@ -18,6 +18,10 @@ include features like real-time messaging, user authentication with anonymity pr
 
 ### Propused deliverable
 
+#### Encrypter
+This module is going to allow the app encrypting the messages goten with the RSA encryption method. 
+
+
 ```mermaid
 
 
