@@ -19,7 +19,11 @@ include features like real-time messaging, user authentication with anonymity pr
 ### Propused deliverable
 
 #### Encrypter
-This module is going to allow the app encrypting the messages goten with the RSA encryption method. 
+The Encrypter module is responsible for ensuring the secure transmission of messages within the application by leveraging the RSA encryption method. This module will generate a unique pair of cryptographic keys: a private key, which remains securely stored within the user’s device, and a public key, which can be shared with other users for message encryption.
+
+When a user sends a message, the module will utilize the recipient's public RSA key to encrypt the content, ensuring that only the intended recipient, who holds the corresponding private key, can decrypt and read the message. The Encrypter module also handles the storage and management of foreign public RSA keys received from other users, enabling seamless and secure communication between parties.
+
+By incorporating robust encryption techniques, this module plays a critical role in maintaining privacy and data security, ensuring that sensitive information is protected against unauthorized access or interception.
 
 
 ```mermaid
