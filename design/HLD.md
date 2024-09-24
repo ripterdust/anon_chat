@@ -44,6 +44,7 @@ D --> I
 ##### Foreing public key storage
 The Foreign Public Key Storage method is a vital component of the Encrypter module, designed to securely handle and store public keys received from other users. 
 This process ensures that the application can facilitate encrypted communication by maintaining a repository of valid public keys.
+
 ```mermaid
 flowchart
 
