@@ -1,4 +1,4 @@
-# Anonymous Chat HLD (High Level Design)
+# Anonymous Chat LLD (Low Level Design)
 
 ## Intended audience
 
@@ -6,7 +6,7 @@ The intended audience for this document includes individuelas across the world w
 
 ## Intended propouse
 
-The intended propouse of this document is to create a High-level Design (HLD) to explain the functionality of the first iteration of -Anonymous Chat-
+The intended propouse of this document is to create a Low-level Design (LLD) to explain the functionality of the first iteration of -Anonymous Chat-
 
 ## Solution
 
