@@ -1,4 +1,4 @@
-# Anonymous chat v1 HLD (High Level Design)
+# Anonymous Chat HLD (High Level Design)
 
 ## Intended audience
 
@@ -26,6 +26,8 @@ When a user sends a message, the module will utilize the recipient's public RSA 
 By incorporating robust encryption techniques, this module plays a critical role in maintaining privacy and data security, ensuring that sensitive information is protected against unauthorized access or interception.
 
 ##### Key Generator
+The Key Generator method is a crucial component of the Encrypter module, responsible for generating a cryptographic key pair: a private key and a public key.
+This process is vital for ensuring secure communication within the application.
 
 ```mermaid
 flowchart
@@ -37,4 +39,22 @@ G --> H("Returns public key")
 H --> I("END")
 D --> I
 
+```
+
+##### Foreing public key storage
+The Foreign Public Key Storage method is a vital component of the Encrypter module, designed to securely handle and store public keys received from other users. 
+This process ensures that the application can facilitate encrypted communication by maintaining a repository of valid public keys.
+```mermaid
+flowchart
+
+A("Start") --> B("Receives the public Key as a param")
+B --> C{"Is a empty key"}
+C --> |Yes| D("Returns a 'NotKeyProvidedError'")
+C --> |No| F{"Is it a valid key"}
+F --> |No| G("Returns a 'NotValidKeyProvidedError'")
+F --> |Yes| H("Stores key in memory")
+H --> I("Returns stored key")
+I --> J("END")
+G --> J
+D --> J
 ```
