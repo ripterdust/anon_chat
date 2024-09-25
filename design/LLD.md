@@ -105,6 +105,13 @@ I --> Z
 ```
 
 #### Message sending
-Code for message sending
+This module is going to allow to send messages and store those in the database
+```mermaid
+flowchart
+
+A("START")
+Z("END")
+
+```
 
 #### Message receiving
