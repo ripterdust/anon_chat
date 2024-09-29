@@ -104,6 +104,25 @@ I --> Z
 
 ```
 
-#### Message sending
+#### Message Receiving
+```mermaid
+flowchart
+A("START")
+Z("END")
 
-#### Message receiving
+A --> B{"Has internet connection?"}
+
+%% No internet connection case
+B --> |NO| C[["Try to connect"]]
+C --> D{"Connected?"}
+D --> |NO| E(Wait 5 seconds)
+E --> D
+D --> |YES| e("Continue")
+
+
+%% Internet Connection Case
+B --> |YES| e
+
+```
+
+#### Message 
