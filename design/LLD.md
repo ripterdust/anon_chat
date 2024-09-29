@@ -110,18 +110,21 @@ flowchart
 A("START")
 Z("END")
 
-A --> B{"Has internet connection?"}
+A --> B{"Mensaje recibido?"}
 
-%% No internet connection case
-B --> |NO| C[["Try to connect"]]
-C --> D{"Connected?"}
-D --> |NO| E(Wait 5 seconds)
+%% Mensaje no recibido
+B --> |NO| C["Esperar por mensaje"]
+C --> D{"Mensaje recibido?"}
+D --> |NO| E(Esperar x segundos)
 E --> D
-D --> |YES| e("Continue")
+D --> |YES| e("Procesar mensaje")
 
 
-%% Internet Connection Case
+%% Mensaje recibido
 B --> |YES| e
+
+e --> Z
+
 
 ```
 
